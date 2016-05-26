@@ -20,58 +20,60 @@ public class Tetris extends JPanel {
     private final Point[][][] Tetraminos = {
             // I-Piece
             {
-                    { new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(3, 1) },
-                    { new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(1, 3) },
-                    { new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(3, 1) },
-                    { new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(1, 3) }
-            },
-
-            // J-Piece
-            {
-                    { new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(2, 0) },
-                    { new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(2, 2) },
-                    { new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(0, 2) },
-                    { new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(0, 0) }
-            },
-
-            // L-Piece
-            {
-                    { new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(2, 2) },
-                    { new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(0, 2) },
-                    { new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(0, 0) },
-                    { new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(2, 0) }
+                    {new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(3, 1)},
+                    {new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(1, 3)},
+                    {new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(3, 1)},
+                    {new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(1, 3)}
             },
 
             // O-Piece
             {
-                    { new Point(0, 0), new Point(0, 1), new Point(1, 0), new Point(1, 1) },
-                    { new Point(0, 0), new Point(0, 1), new Point(1, 0), new Point(1, 1) },
-                    { new Point(0, 0), new Point(0, 1), new Point(1, 0), new Point(1, 1) },
-                    { new Point(0, 0), new Point(0, 1), new Point(1, 0), new Point(1, 1) }
-            },
-
-            // S-Piece
-            {
-                    { new Point(1, 0), new Point(2, 0), new Point(0, 1), new Point(1, 1) },
-                    { new Point(0, 0), new Point(0, 1), new Point(1, 1), new Point(1, 2) },
-                    { new Point(1, 0), new Point(2, 0), new Point(0, 1), new Point(1, 1) },
-                    { new Point(0, 0), new Point(0, 1), new Point(1, 1), new Point(1, 2) }
+                    {new Point(0, 0), new Point(0, 1), new Point(1, 0), new Point(1, 1)},
+                    {new Point(0, 0), new Point(0, 1), new Point(1, 0), new Point(1, 1)},
+                    {new Point(0, 0), new Point(0, 1), new Point(1, 0), new Point(1, 1)},
+                    {new Point(0, 0), new Point(0, 1), new Point(1, 0), new Point(1, 1)}
             },
 
             // T-Piece
             {
-                    { new Point(1, 0), new Point(0, 1), new Point(1, 1), new Point(2, 1) },
-                    { new Point(1, 0), new Point(0, 1), new Point(1, 1), new Point(1, 2) },
-                    { new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(1, 2) },
-                    { new Point(1, 0), new Point(1, 1), new Point(2, 1), new Point(1, 2) }
+                    {new Point(1, 0), new Point(0, 1), new Point(1, 1), new Point(2, 1)},
+                    {new Point(1, 0), new Point(0, 1), new Point(1, 1), new Point(1, 2)},
+                    {new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(1, 2)},
+                    {new Point(1, 0), new Point(1, 1), new Point(2, 1), new Point(1, 2)}
             },
+
+            // J-Piece
+            {
+                    {new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(2, 0)},
+                    {new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(2, 2)},
+                    {new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(0, 2)},
+                    {new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(0, 0)}
+            },
+
+            // L-Piece
+            {
+                    {new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(2, 2)},
+                    {new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(0, 2)},
+                    {new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(0, 0)},
+                    {new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(2, 0)}
+            },
+
+
+            // S-Piece
+            {
+                    {new Point(1, 0), new Point(2, 0), new Point(0, 1), new Point(1, 1)},
+                    {new Point(0, 0), new Point(0, 1), new Point(1, 1), new Point(1, 2)},
+                    {new Point(1, 0), new Point(2, 0), new Point(0, 1), new Point(1, 1)},
+                    {new Point(0, 0), new Point(0, 1), new Point(1, 1), new Point(1, 2)}
+            },
+
 
             // Z-Piece
             {
-                    { new Point(0, 0), new Point(1, 0), new Point(1, 1), new Point(2, 1) },
-                    { new Point(1, 0), new Point(0, 1), new Point(1, 1), new Point(0, 2) },
-                    { new Point(0, 0), new Point(1, 0), new Point(1, 1), new Point(2, 1) },
-                    { new Point(1, 0), new Point(0, 1), new Point(1, 1), new Point(0, 2) }
+                    {new Point(0, 0), new Point(1, 0), new Point(1, 1), new Point(2, 1)},
+                    {new Point(1, 0), new Point(0, 1), new Point(1, 1), new Point(0, 2)},
+                    {new Point(0, 0), new Point(1, 0), new Point(1, 1), new Point(2, 1)},
+                    {new Point(1, 0), new Point(0, 1), new Point(1, 1), new Point(0, 2)}
             }
     };
 
@@ -79,6 +81,7 @@ public class Tetris extends JPanel {
             Color.cyan, Color.blue, Color.orange, Color.yellow, Color.green, Color.pink, Color.red
     };
 
+    private static int level = 1000;
     private Point pieceOrigin;
     private int currentPiece;
     private int rotation;
@@ -86,7 +89,7 @@ public class Tetris extends JPanel {
 
     private long score;
     private Color[][] well;
-    private boolean gameLost = false;
+    private static boolean gameLost = false;
 
     // Creates a border around the well and initializes the dropping piece
     void init() {
@@ -103,22 +106,12 @@ public class Tetris extends JPanel {
         newPiece();
     }
 
-    public interface OnNewPieceListener {
-        void onNewPiece(Integer piece, boolean[][] well);
-    }
-
-    private OnNewPieceListener listener;
-
-    public void setListener(OnNewPieceListener listener) {
-        this.listener = listener;
-    }
-
-    public boolean[][] wellToBool () {
+    public boolean[][] wellToBool() {
         boolean[][] booleans = new boolean[10][22];
 
         for (int i = 1; i <= 10; i++)
             for (int j = 0; j < 22; j++)
-                booleans[i - 1][j] = well [i][j] != Color.BLACK;
+                booleans[i - 1][j] = well[i][j] != Color.BLACK;
 
         return booleans;
     }
@@ -133,23 +126,31 @@ public class Tetris extends JPanel {
             if (!info.isSuccess()) {
                 gameLost = true;
             }
-            while (info.isSuccess()) {
-                System.out.println("solution: " + info.getSolution() + " - bindings: " + info + " piece origin " + pieceOrigin.x);
-                if (Control.getControl().getEngine().hasOpenAlternatives()) {
-                    info = Control.getControl().getEngine().solveNext();
-                } else {
-                    break;
-                }
-            }
 
-            if (!gameLost) {
+            if (info.isSuccess()) {
+                while (info.isSuccess()) {
+                    System.out.println("solution: " + info.getSolution() + " - bindings: " + info + " piece origin " + pieceOrigin.x);
+                    if (Control.getControl().getEngine().hasOpenAlternatives()) {
+                        info = Control.getControl().getEngine().solveNext();
+                    } else {
+                        break;
+                    }
+                }
+
                 int position = Character.getNumericValue(resultInfo.getBindingVars().get(0).toString().charAt(4));
                 int rotation = Character.getNumericValue(resultInfo.getBindingVars().get(1).toString().charAt(4));
 
-                this.rotate(-rotation);
-                this.move(position - pieceOrigin.x);
+                System.out.println("Current piece " + currentPiece);
 
-                //executeMove(position, rotation, tetrominoId, c);
+                System.out.println("Current origin " + pieceOrigin.x);
+                System.out.println("Current position " + currentPiece);
+
+
+                this.move(position - pieceOrigin.x + 1);
+                this.rotate(rotation - 1);
+
+                System.out.println("Current origin " + pieceOrigin.x);
+                System.out.println("Current position " + currentPiece);
             }
         } catch (MalformedGoalException e) {
             e.printStackTrace();
@@ -162,8 +163,38 @@ public class Tetris extends JPanel {
 
     // Put a new, random piece into the dropping position
     public void newPiece() {
-        pieceOrigin = new Point(4, 1);
-        rotation = 0;
+        switch (currentPiece) {
+            case 0:
+                pieceOrigin = new Point(4, 1);
+                rotation = 0;
+                break;
+            case 1:
+                pieceOrigin = new Point(5, 1);
+                rotation = 0;
+                break;
+            case 2:
+                pieceOrigin = new Point(4, 1);
+                rotation = 2;
+                break;
+            case 3:
+                pieceOrigin = new Point(4, 1);
+                rotation = 2;
+                break;
+            case 4:
+                pieceOrigin = new Point(4, 1);
+                rotation = 2;
+                break;
+            case 5:
+                pieceOrigin = new Point(5, 1);
+                rotation = 0;
+                break;
+            case 6:
+                pieceOrigin = new Point(5, 1);
+                rotation = 0;
+                break;
+
+        }
+
         if (nextPieces.isEmpty()) {
             Collections.addAll(nextPieces, 0, 1, 2, 3, 4, 5, 6);
             Collections.shuffle(nextPieces);
@@ -202,9 +233,16 @@ public class Tetris extends JPanel {
 
     // Move the piece left or right
     public void move(int i) {
+        boolean moved = false;
         if (!collidesAt(pieceOrigin.x + i, pieceOrigin.y, rotation)) {
             pieceOrigin.x += i;
+            System.out.println("IT MOOOOVED to " + pieceOrigin.x);
+            moved = true;
         }
+
+        if (!moved)
+            System.out.println("Can't move from " + pieceOrigin.x + " to " + (pieceOrigin.x + i));
+
         repaint();
     }
 
@@ -225,13 +263,23 @@ public class Tetris extends JPanel {
             well[pieceOrigin.x + p.x][pieceOrigin.y + p.y] = tetraminoColors[currentPiece];
         }
         clearRows();
-        newPiece();
+
+        if (!(gameLost = isGameOver()))
+            newPiece();
+    }
+
+    public boolean isGameOver() {
+        for (int i = 1; i < 11; i++) {
+            if (well[i][1] != Color.BLACK)
+                return true;
+        }
+        return false;
     }
 
     public void deleteRow(int row) {
-        for (int j = row-1; j > 0; j--) {
+        for (int j = row - 1; j > 0; j--) {
             for (int i = 1; i < 11; i++) {
-                well[i][j+1] = well[i][j];
+                well[i][j + 1] = well[i][j];
             }
         }
     }
@@ -284,20 +332,25 @@ public class Tetris extends JPanel {
     }
 
     @Override
-    public void paintComponent(Graphics g)
-    {
+    public void paintComponent(Graphics g) {
         // Paint the well
-        g.fillRect(0, 0, 26*12, 26*23);
+        g.fillRect(0, 0, 26 * 12, 26 * 23);
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 23; j++) {
                 g.setColor(well[i][j]);
-                g.fillRect(26*i, 26*j, 25, 25);
+                g.fillRect(26 * i, 26 * j, 25, 25);
             }
         }
 
         // Display the score
         g.setColor(Color.WHITE);
-        g.drawString("" + score, 19*12, 25);
+        g.drawString("" + score, 19 * 12, 25);
+
+        if (gameLost) {
+            g.setColor(Color.WHITE);
+            g.drawString("GAME OVER", 12 * 13, 13 * 23);
+            g.drawString("PRESS ENTER TO CONTINUE", 12 * 14, 13 * 23 + 10);
+        }
 
         // Draw the currently falling piece
         drawPiece(g);
@@ -306,7 +359,7 @@ public class Tetris extends JPanel {
     public static void main(String[] args) {
         JFrame f = new JFrame("Tetris");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setSize(12*26+10, 26*23+25);
+        f.setSize(12 * 26 + 10, 26 * 23 + 25);
         f.setVisible(true);
 
         final Tetris game = new Tetris();
@@ -336,6 +389,23 @@ public class Tetris extends JPanel {
                         game.dropDown();
                         game.score += 1;
                         break;
+                    case KeyEvent.VK_ENTER:
+                        game.init();
+                        gameLost = false;
+                        game.score = 0;
+                        break;
+                    case KeyEvent.VK_1:
+                        level = 100;
+                        break;
+                    case KeyEvent.VK_2:
+                        level = 200;
+                        break;
+                    case KeyEvent.VK_3:
+                        level = 500;
+                        break;
+                    case KeyEvent.VK_4:
+                        level = 1000;
+                        break;
                 }
             }
 
@@ -345,12 +415,14 @@ public class Tetris extends JPanel {
 
         // Make the falling piece drop every second
         new Thread() {
-            @Override public void run() {
+            @Override
+            public void run() {
                 while (true) {
                     try {
-                        Thread.sleep(500);
+                        Thread.sleep(level);
                         game.dropDown();
-                    } catch ( InterruptedException e ) {}
+                    } catch (InterruptedException e) {
+                    }
                 }
             }
         }.start();
